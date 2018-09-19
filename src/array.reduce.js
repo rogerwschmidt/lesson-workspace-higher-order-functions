@@ -1,39 +1,25 @@
 const { groupByProperty } = require('./functions-return-functions')
 
 function sumNumbers(arr){
-  let result = 0
-  for(const value of arr){
-    result = result + value
-  }
-
-  return result
+  return arr.reduce(function(acc, ele){
+    return acc + ele
+  }, 0)
 }
 
-function countLetters(str){
-  let result = {}
-  for(const value of str){
-    if(result.hasOwnProperty(value)){
-      result[value] = result[value] + 1
+function countLetters(arr){
+  return arr.reduce(function(acc, ele){
+    if(acc.hasOwnProperty(ele)){
+      acc[ele] = acc[ele] + 1
     }
     else{
-      result[value] = 1
+      acc[ele] = 1
     }
-  }
-  return result
+    return acc
+  },{})
 }
 
 function groupByUniversity(arr){
-  let result = {}
-  for(const value of arr){
-    if(result.hasOwnProperty(value.university)){
-      result[value.university].push(value)
-    }
-    else {
-      result[value.university] = [ value ]
-    }
-  }
-
-  return result
+  return arr.reduce(groupByProperty('university'), {})
 }
 
 

@@ -17,10 +17,15 @@ function notDivisibleBy(divisor){
 }
 
 function scoreBelow(baselineScore){
-
+  return function(player){
+    return player.careerPoints < baselineScore
+  }
 }
 
 function startsWith(startingLetter){
+  return function(name){
+    return name[0] === startingLetter
+  }
 
 }
 
