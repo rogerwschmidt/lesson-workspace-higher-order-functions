@@ -9,9 +9,9 @@ function sumNumbers(arr){
   return result
 }
 
-function countLetters(str){
+function countLetters(arr){
   let result = {}
-  for(const value of str){
+  for(const value of arr){
     if(result.hasOwnProperty(value)){
       result[value] = result[value] + 1
     }
