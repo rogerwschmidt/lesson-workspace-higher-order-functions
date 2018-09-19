@@ -1,3 +1,5 @@
+const { groupByProperty } = require('./functions-return-functions')
+
 function sumNumbers(arr){
   let result = 0
   for(const value of arr){

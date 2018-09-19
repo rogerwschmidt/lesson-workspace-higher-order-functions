@@ -26,11 +26,11 @@ function startsWith(startingLetter){
 
 function groupByProperty(propertyName){
   return function(acc, object){
-    if(acc.hasOwnProperty(propertyName)){
-      acc[propertyName].push(object)
+    if(acc.hasOwnProperty(object[propertyName])){
+      acc[object[propertyName]].push(object)
     }
     else{
-      acc[propertyName] = [ object ]
+      acc[object[propertyName]] = [ object ]
     }
     return acc
   }

@@ -27,7 +27,7 @@ describe('sumNumbers', function(){
 
 describe('countLetters', function(){
   it('returns an empty object if the string is empty', function(){
-    const string = ''
+    const string = []
     const actual = countLetters(string)
 
     const expected = {}
@@ -35,7 +35,7 @@ describe('countLetters', function(){
     expect(actual).to.deep.equal(expected)
   })
   it('returns an object with keys for letters and values for their respective counts', function(){
-    const string = 'abcabcabc'
+    const string = ['a','b','c','a','b','c','a','b','c']
     const actual = countLetters(string)
 
     const expected = { a: 3, b: 3, c: 3}
